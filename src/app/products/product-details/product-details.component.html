@@ -1,0 +1,56 @@
+
+<div class="container" *ngIf="!productDetails">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12" *ngIf="productDetails">
+    <!-- product -->
+    <div class="product-content product-wrap clearfix product-deatil">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                    <img src="{{productDetails.image}}" class="img-responsive" alt="" />
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+                
+                <h2 class="name">
+                    {{productDetails.title}}
+                    
+                </h2>
+                <span class="category">{{productDetails.category}}</span>
+                <p>
+                    {{productDetails.description}}
+                </p>
+                <hr />
+                <h3 class="price-container">
+                    ${{productDetails.price}}
+                    <small>*includes tax</small>
+                </h3>
+                <div class="certified">
+                    <ul>
+                        <li>
+                            <a>Delivery time<span>7 Working Days</span></a>
+                        </li>
+                        <li>
+                            <a>Certified<span>Quality Assured</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <a class="btn btn-success btn-lg">Add to cart (${{productDetails.price}})</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product -->
+</div>
+

@@ -1,0 +1,66 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                  Add New Product
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+                        
+                           <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Title</label>
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control" name="title" id="title" placeholder="title" formControlName="title">
+                            </div>
+                          </div> 
+                          
+                          <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Price</label>
+                            <div class="col-sm-6">
+                              <input type="number" min="0" class="form-control" oninput="this.value = 
+                              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" name="price" id="price" placeholder="price" formControlName="price">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-6">
+                              <textarea type="text" class="form-control" name="description" rows="3" id="description" placeholder="description" formControlName="description"></textarea>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Product Image</label>
+                            <div class="col-sm-3">
+                              <label class="control-label small" for="file_img">Image (jpg/png):</label> <input type="file" name="file_img" formControlName="image">
+                            </div>
+                          </div>  
+
+                          <div class="form-group">
+                            <label for="tech" class="col-sm-3 control-label">Category</label>
+                            <div class="col-sm-3">
+                           <select class="form-control" formControlName="category">
+                            <option value="" disabled selected>Category</option>
+                            <option value="Category 1">Category 1</option>
+                            <option value="Category 2">Category 2</option>
+                           </select>
+                            </div>
+                          </div>  
+                          <hr>
+                          <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                              <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid">Add Product</button>
+                            </div>
+                          </div>  
+                        </form>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
