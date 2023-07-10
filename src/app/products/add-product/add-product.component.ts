@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from '../services/products.service';
@@ -20,12 +20,12 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addProductForm = new FormGroup({
-    title: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    image: new FormControl('', Validators.required),
-    category: new FormControl('', Validators.required)   
+  addProductForm = new UntypedFormGroup({
+    title: new UntypedFormControl('', Validators.required),
+    price: new UntypedFormControl('', Validators.required),
+    description: new UntypedFormControl('', Validators.required),
+    image: new UntypedFormControl('', Validators.required),
+    category: new UntypedFormControl('', Validators.required)   
   });
 
   onSubmit(){
