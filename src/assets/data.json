@@ -1,0 +1,14 @@
+[
+    {
+        "username": "user",
+        "password": "user",
+        "token":"user.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgzMjU1LCJ1c2VyX3Bob25lIjoisaasda",
+        "role":"user"
+    },
+    {
+        "username": "admin",
+        "password": "admin",
+        "token":"admin.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgzMjU1LCJ1c2VyX3Bob25lIjoisaasda",
+        "role":"admin"
+    }
+]
