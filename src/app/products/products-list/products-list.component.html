@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-3 mt-5">
             <mat-form-field>
-                <mat-label>Select Category</mat-label>
+                <mat-label>{{ 'SELECTCATEGORY' | transloco }}</mat-label>
                 <mat-select (selectionChange)="onSelect($event.value)">
                   <mat-option *ngFor="let cat of allCategories" [value]="cat">
                     {{cat}}
@@ -43,7 +43,7 @@
                         </div>
                         <div class="m-t text-righ">
     
-                            <a [routerLink]="['/products/details/', product.id]" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                            <a [routerLink]="['/products/details/', product.id]" class="btn btn-xs btn-outline btn-primary">{{ 'INFO' | transloco }} <i class="fa fa-long-arrow-right"></i> </a>
                         </div>
                     </div>
                 </div>

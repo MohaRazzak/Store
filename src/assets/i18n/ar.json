@@ -1,0 +1,34 @@
+{
+    "STOREAPP":"ستور ابلكيشن",
+    "LOGOUT":"تسجيل الخروج",
+    "LOGIN":"تسجيل الدخول",
+    "USERNAME":"اسم المستخدم",
+    "PASSWORD":"كلمه السر",
+    "FOOTER":{
+        "CONTACT":"تواصل معنا ",
+        "USEFULLINKS":"مواقع مفيده",
+        "PRODUCTS":"المنتجات",
+        "COMPANYNAME":"ستور ابلكيشن",
+        "COPMPANYNAMEDESC":"هنا يمكنك استخدام الصفوف والأعمدة لتنظيم محتوى التذييل الخاص بك."
+    },
+    "HEADER":{
+        "DASHBOARD":"لوحة التحكم",
+        "PRODUCTS":"المنتجات"
+    },
+    "SELECTCATEGORY":"اختر القسم",
+    "INFO":"معلومات",
+    "ID":"رقم",
+    "IMAGE":"الصورة",
+    "TITLE":"العنوان",
+    "PRICE":"السعر",
+    "CATEGORY":"القسم",
+    "ACTIONS":"اجراءات",
+    "ADDPRODUCT":"اضافة منتج",
+    "UPDATEPRODUCT":"تعديل منتج",
+    "ADDTOCART":"اضافة للعربة",
+    "DESC":"التفاصيل",
+    "DELETEDSSUCCESS" : "تم مسح المنتج بنجاح",
+    "PRODUCTDONE" : "تم اضافه المنتج بنجاح",
+    "LOGINSUCCESS":"تم تسجيل الدخول بنجاح",
+    "LOGINFAIL":"لم يتم تسحيل الدخول"
+}

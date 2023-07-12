@@ -6,22 +6,16 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
-
-
-
-
-
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 @NgModule({
@@ -40,11 +34,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
     MatTableModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    TranslocoRootModule
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

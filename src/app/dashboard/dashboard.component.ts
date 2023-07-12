@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth/services/auth.service';
 import { ProductsService } from '../products/services/products.service';
@@ -26,7 +27,8 @@ export class dashboardComponent implements OnInit {
     private authServices : AuthService,
     private productServices : ProductsService,
     private toastr: ToastrService,
-    private router:Router
+    private router:Router,
+    private translocoService: TranslocoService
     ) { }
   
 
@@ -41,8 +43,9 @@ export class dashboardComponent implements OnInit {
   }
 
   deleteProduct(e:any){
+    const message = this.translocoService.translate('DELETEDSSUCCESS');
     this.productServices.deleteProduct(e.id).subscribe((res : any) =>{
-      this.toastr.success('Product deleted Successfully', '');
+      this.toastr.success(message, '');
     })
   }
 

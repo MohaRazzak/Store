@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
 
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private router:Router,
     private httpService: HttpClient,
-    private authServices : AuthService
+    private authServices : AuthService,
+    private translocoService : TranslocoService
   )
   {}
   
@@ -45,17 +47,18 @@ export class LoginComponent implements OnInit {
   CheckUser(user: any){
     let result = this.users.filter((u:any) => (u.username === user.username && u.password === user.password));
     if(result.length > 0){
-      this.toastr.success('Logged successfully', '');
+      const message = this.translocoService.translate('LOGINSUCCESS');
       localStorage.setItem('token', result[0].token);
       localStorage.setItem('role', result[0].role);
       this.router.navigate(['/dashboard']).then(() => {
         window.location.reload();
       });
-
+      this.toastr.success(message, '');
 
     }else{
+      const message = this.translocoService.translate('LOGINFAIL');
       localStorage.clear();
-      this.toastr.error('Uesrname or password is wrong', '');
+      this.toastr.error(message, '');
     }
   }
 

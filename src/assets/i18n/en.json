@@ -1,0 +1,34 @@
+{
+    "STOREAPP":"Store App",
+    "LOGOUT":"Logout",
+    "LOGIN":"Login",
+    "USERNAME":"Username",
+    "PASSWORD":"Password",
+    "FOOTER":{
+        "CONTACT":"Contact",
+        "USEFULLINKS":"Useful Links",
+        "PRODUCTS":"Products",
+        "COMPANYNAME":"Company Name",
+        "COPMPANYNAMEDESC":"Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    "HEADER":{
+        "DASHBOARD":"Dashboard",
+        "PRODUCTS":"Products"
+    },
+    "SELECTCATEGORY":"Select Category",
+    "INFO":"Info",
+    "ID":"Id",
+    "IMAGE":"Image",
+    "TITLE":"Title",
+    "PRICE  ":"Price",
+    "CATEGORY":"Category",
+    "ACTIONS":"Actions",
+    "ADDPRODUCT":"Add Product",
+    "UPDATEPRODUCT":"Update Product",
+    "ADDTOCART":"Add To Cart",
+    "DESC":"Description",
+    "DELETEDSSUCCESS" : "Product deleted Successfully",
+    "PRODUCTDONE" : "Product Added Successfully",
+    "LOGINSUCCESS":"Login Successfully",
+    "LOGINFAIL":"Login Failed"
+}

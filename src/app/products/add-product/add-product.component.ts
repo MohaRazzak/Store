@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { ProductsService } from '../services/products.service';
@@ -18,7 +19,8 @@ export class AddProductComponent implements OnInit {
     private productServices :ProductsService,
     private toastr: ToastrService,
     private router:Router,
-    private authServices :AuthService
+    private authServices :AuthService,
+    private translocoService : TranslocoService
     ) {
       if(this.router.getCurrentNavigation()?.extras?.state?.product != null){
         this.editMode = true;
@@ -50,14 +52,15 @@ export class AddProductComponent implements OnInit {
   });
 
   onSubmit(){
+    const message = this.translocoService.translate('PRODUCTDONE');
     if(!this.editMode){
       this.productServices.addProduct(this.addProductForm.value).subscribe((res : any) =>{
-        this.toastr.success('Product Added Successfully', '');
+        this.toastr.success(message, '');
         this.router.navigate(['/products']);
       })
     }else{
       this.productServices.editProduct(this.updatedProduct.id ,this.addProductForm.value).subscribe((res : any) =>{
-        this.toastr.success('Product updated Successfully', '');
+        this.toastr.success(message, '');
         this.router.navigate(['/products']);
       })
     }

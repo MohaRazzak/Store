@@ -4,21 +4,21 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header" *ngIf="!editMode">Add New Product</div>
-                <div class="card-header" *ngIf="editMode">UpdateProduct</div>
+                <div class="card-header" *ngIf="!editMode">{{ 'ADDPRODUCT' | transloco }}</div>
+                <div class="card-header" *ngIf="editMode">{{ 'UPDATEPRODUCT' | transloco }}</div>
 
                 <div class="card-body">
                     <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()" class="form-horizontal">
                         
                            <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Title</label>
+                            <label for="name" class="col-sm-3 control-label">{{ 'TITLE' | transloco }}</label>
                             <div class="col-sm-6">
                               <input type="text" class="form-control" name="title" id="title" placeholder="title" formControlName="title">
                             </div>
                           </div> 
                           
                           <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Price</label>
+                            <label for="name" class="col-sm-3 control-label">{{ 'PRICE' | transloco }}</label>
                             <div class="col-sm-6">
                               <input type="number" min="0" class="form-control" oninput="this.value = 
                               !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" name="price" id="price" placeholder="price" formControlName="price">
@@ -26,7 +26,7 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Description</label>
+                            <label for="name" class="col-sm-3 control-label">{{ 'DESC' | transloco }}</label>
                             <div class="col-sm-6">
                               <textarea type="text" class="form-control" name="description" rows="3" id="description" placeholder="description" formControlName="description"></textarea>
                             </div>
@@ -34,14 +34,14 @@
 
 
                           <div class="form-group">
-                            <label for="tech" class="col-sm-3 control-label">Category</label>
+                            <label for="tech" class="col-sm-3 control-label">{{ 'CATEGORY' | transloco }}</label>
                             <div class="col-sm-3">
                               <input type="text" class="form-control" name="category" id="category" placeholder="category" formControlName="category">
                             </div>
                           </div> 
 
                           <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Product Image</label>
+                            <label for="name" class="col-sm-3 control-label">{{ 'IMAGE' | transloco }}</label>
                             <div class="col-sm-3">
                               <label class="control-label small" for="file_img">Image (jpg/png):</label> <input type="file" name="file_img" formControlName="image">
                             </div>
@@ -50,8 +50,8 @@
                           <hr>
                           <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
-                              <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid" *ngIf="!editMode">Add Product</button>
-                              <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid" *ngIf="editMode">Update Product</button>
+                              <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid" *ngIf="!editMode">{{ 'ADDPRODUCT' | transloco }}</button>
+                              <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid" *ngIf="editMode">{{ 'UPDATEPRODUCT' | transloco }}</button>
 
                             </div>
                           </div>  
