@@ -10,14 +10,11 @@
                   
                     <div class="collapse navbar-collapse"  *ngIf="isAuthenticated">
                       <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"  [routerLink]="['']"  routerLinkActive="active-color" [routerLinkActiveOptions]="{ exact: true }">
+                        <li class="nav-item active"  [routerLink]="['/dashboard']"  *ngIf="role == 'admin'" routerLinkActive="active-color" [routerLinkActiveOptions]="{ exact: true }">
                           <a class="nav-link">Dashboard</a>
                         </li>
-                        <li class="nav-item active" [routerLink]="['/products']"  routerLinkActive="active-color" [routerLinkActiveOptions]="{ exact: true }">
+                        <li class="nav-item active" [routerLink]="['/products']"  *ngIf="role == 'user'" routerLinkActive="active-color" [routerLinkActiveOptions]="{ exact: true }">
                           <a class="nav-link">Products</a>
-                        </li>
-                        <li class="nav-item" [routerLink]="['/products/add']"  routerLinkActive="active-color" [routerLinkActiveOptions]="{ exact: true }">
-                          <a class="nav-link">Add Product</a>
                         </li>
                       </ul>
                     </div>

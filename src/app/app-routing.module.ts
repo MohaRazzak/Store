@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AuthGuard } from './auth/guard/auth.guard';
+import { dashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
-  {path: 'dashboard', component: LandingPageComponent},
+  {path: '', component: dashboardComponent},
+  {path: 'dashboard', component: dashboardComponent ,canActivate: [AuthGuard],},
   {
     path: 'products',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./products/products.module').then(m => m.ProductsModule),
   },
   {

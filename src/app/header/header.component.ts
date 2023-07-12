@@ -9,7 +9,8 @@ import { AuthService } from '../auth/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isAuthenticated = this.authServices.isAuthenticated()
+  isAuthenticated = this.authServices.isAuthenticated();
+  role = this.authServices.getRole()
 
 
   constructor(
@@ -30,5 +31,6 @@ export class HeaderComponent implements OnInit {
   login(){
     this.router.navigate(['/login']);
   }
+
 
 }

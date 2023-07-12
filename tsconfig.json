@@ -14,9 +14,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
     "resolveJsonModule": true,
     "module": "es2020",
+    "strictPropertyInitialization": false,
     "lib": [
       "es2018",
       "dom"

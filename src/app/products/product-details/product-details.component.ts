@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private productServices :ProductsService,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private authServices :AuthService
     ) { }
   productDetails: any;
   productId :any;
@@ -19,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.productId = this.route.snapshot.params.id;
     this.getProductMethod();
+    this.authServices.checkAdminRole();
   }
 
 

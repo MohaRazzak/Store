@@ -45,11 +45,13 @@ export class LoginComponent implements OnInit {
   CheckUser(user: any){
     let result = this.users.filter((u:any) => (u.username === user.username && u.password === user.password));
     if(result.length > 0){
-      localStorage.setItem('token', JSON.stringify(result[0].token));
-      localStorage.setItem('role', JSON.stringify(result[0].role));
+      this.toastr.success('Logged successfully', '');
+      localStorage.setItem('token', result[0].token);
+      localStorage.setItem('role', result[0].role);
       this.router.navigate(['/dashboard']).then(() => {
         window.location.reload();
       });
+
 
     }else{
       localStorage.clear();
